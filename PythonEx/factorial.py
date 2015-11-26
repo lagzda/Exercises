@@ -7,4 +7,4 @@ def factorial(n):
     #Return the current number times one smaller, again one smaller and so on until 1 is reached
     return n * factorial(n-1)
 
-print factorial(4)
+print factorial(8)
