@@ -1,6 +1,6 @@
 #Take a string as a parameter and return all the characters in alphabetical order
 #For this I use merge sort and comments can be found in my CS50/Algorithms/mergesort.c file
-#Although that file is in c the algorith is pretty much the same
+#Although that file is in c the algorithm is pretty much the same
 
 def sort(str, min, mid, max):
     left = str[min:mid+1]
