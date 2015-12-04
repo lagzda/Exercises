@@ -11,9 +11,14 @@ class LinkedList(object):
     def __init__(self):
         self.head = None
         self.tail = None
+    def getHead(self):
+        print self.head.value
+    def getTail(self):
+        print self.tail.value
     def insert(self):
         value = int(input("Enter a value you want to add: "))
         ptr = self.head
+        #Create the node object
         node = Node(value)
         #First case - if the list is empty we insert the item as the head(start) as well as the tail(end)
         if ptr == None:
@@ -28,8 +33,13 @@ class LinkedList(object):
             elif value > self.tail.value:
                 self.tail.next = node
                 self.tail = node
-            #Fourth case - the value should go somewhere in the middle    
-                
+            #Fourth case - the value should go somewhere in the middle
+            else:
+                while ptr != self.tail:
+                    if value > ptr.value and value <= ptr.next.value:
+                        node.next = ptr.next
+                        ptr.next = node
+                    ptr = ptr.next 
             
     def traverse(self):
         print "The list is: "
@@ -40,13 +50,18 @@ class LinkedList(object):
 
 ll = LinkedList()            
 selection = 0
-while (selection != 4):
+while (selection != 5):
+    print "1: Traverse; 2: Insert, 3: Get Head, 4: Get Tail, 5: Quit"
     try:
         selection = int(input("Your selection: "))
         if selection == 1:
             ll.traverse()
-        if selection == 2:
+        elif selection == 2:
             ll.insert()
+        elif selection == 3:
+            ll.getHead()
+        elif selection == 4:
+            ll.getTail()
     except:
         print("Try again")
     
