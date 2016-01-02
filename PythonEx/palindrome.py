@@ -4,7 +4,7 @@ parameter being passed and return the string true if the parameter is a palindro
 false. For example: "racecar" is also "racecar" backwards. Punctuation and numbers  
 will not be part of the string. """
 
-#Just because the string will not contain punctuation and numbers (I assume whitespaces either)
+#Just because the string will not contain punctuation and numbers (I assume whitespaces either) 
 #it is possible to have a cool way of performing the function by checking both sides of the string 
 #simultaneously until middle is reached.
 #Although theoretically the function's time complexity is O(n) in reality it is only half of that
@@ -27,3 +27,6 @@ str3 = "abbca"
 print palindrome(str)
 print palindrome(str2)
 print palindrome(str3)
+
+#Added note: A normalisation function could also be implemented such as one that 
+#creates a new string containing only alphabetical characters of the old string.
